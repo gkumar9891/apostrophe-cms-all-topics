@@ -22,3 +22,7 @@ This boilerplate is designed so you can install and start running it right away.
 
 Right now, [all the juicy info is in the A3 docs](https://a3.docs.apostrophecms.org), so head over there and start reading! This boilerplate project is a fun introduction to the UI, but you'll want to know more to really try it out.
 
+### topic covered
+
+added another html in piece type like for piece type index page '/' url and '/:slug' for show.html and /:slug/:team for team.html
+

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<h1>sport name</h1>
+<ul class="d-flex flex-wrap">
+    {% for sports in data.pieces %}
+    {% set images = apos.attachment.all(sports._galleryItems) %}
+    {% for image in images %}
+    <li><img srcset="{{apos.image.srcset(image)}}" src="{{apos.attachment.url(image, data.options.size or 'full')}}" alt="{{image._alt or ''}}"
+        width="{{ apos.attachment.getWidth(image) }}"
+        height="{{ apos.attachment.getHeight(image) }}"
+        style="width: 100px; height: auto; margin: 2px;"
+        {% if apos.attachment.hasFocalPoint(image) %}
+        style="object-position: {{ apos.attachment.focalPointToObjectPosition(attachment) }}; width: 100px"
+        {% endif %}
+        ></li>
+    {% endfor %}
+
+    {% endfor %}
+</ul>
+{% endblock %}
